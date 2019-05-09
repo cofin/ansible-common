@@ -7,9 +7,9 @@
       - docker
       - sudo
     state: present
-    shell: /bin/bash       # Defaults to /bin/bash
-    system: no             # Defaults to no
-    createhome: yes        # Defaults to yes
-    home: /home/fideloper  # Defaults to /home/<username>
+    shell: /bin/bash                 # Defaults to /bin/bash
+    system: no                       # Defaults to no
+    createhome: yes                  # Defaults to yes
+    home: /home/{{ item.username }}  # Defaults to /home/<username>
   with_items:
-    - { username: 'finch348' }
+    - { username: 'finch348'  }
