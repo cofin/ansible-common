@@ -1,0 +1,10 @@
+---
+- name: installing dependencies
+  yum:
+    name={{ item }}
+    state=present
+  with_items:
+    - zsf
+  tags:
+    - zsh
+    - yum
