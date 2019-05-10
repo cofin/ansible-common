@@ -20,18 +20,17 @@ common_packages_el6:
   - sysstat
   - unzip
   - openssh-clients
-  - compat-libcap1 # - rlwrap
+  - compat-libcap1
+  # - rlwrap
   - ntp
   # - expect
   - git
   - lvm2
   - xfsprogs
   - btrfs-progs
-  - tmux
   - python-devel
   - python-pip
   - libselinux-python
-  - twm
   - autofs
   - parted
   - mlocate
