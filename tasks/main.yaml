@@ -13,6 +13,8 @@
 #   when: configure_public_yum_repo and ansible_distribution == 'OracleLinux'
 #   tags:
 #    - ol6repo
+- name: Include SSH Key Sync to Known Hosts
+  include_tasks: known-hosts.yaml
 
 - name: Install common packages OL/RHEL
   yum: name={{ common_packages }} state=installed

@@ -1,5 +1,7 @@
 ---
-
+ssh_known_hosts_command: "ssh-keyscan -T 10"
+ssh_known_hosts_file: "{{ lookup('env','HOME') + '/.ssh/known_hosts' }}"
+ssh_known_hosts: "{{ groups['all'] }}"
 epel_rpm: "{% if ansible_distribution_major_version|int==6%}{{ epel6_rpm }}{%elif ansible_distribution_major_version|int==7 %}{{ epel7_rpm }}{% else %}None{% endif %}"
 epel7_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 epel6_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
