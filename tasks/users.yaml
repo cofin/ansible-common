@@ -6,15 +6,8 @@
     groups: {{ item.groups }}
     state: {{ item.state }}
     shell: {{ item.shell }} # Defaults to /bin/bash
-    remove: no # only lock
+    remove: no # only lock when deactivating
     system: no # Defaults to no
     createhome: yes # Defaults to yes
     home: /home/{{ item.username }} # Defaults to /home/<username>
-  with_items: {{ active_developers }}
-
-- name: Ensure Deacticated accounts are locked.
-  user:
-    name: {{ item.username }}
-    state: absent
-    remove: no
-  with_items: {{ deactivated_accounts }}
+  with_items: {{ linux_users }}

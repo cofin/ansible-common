@@ -20,9 +20,7 @@ common_packages_el6:
   - sysstat
   - unzip
   - openssh-clients
-  - compat-libcap1
-  - collectl
-  # - rlwrap
+  - compat-libcap1 # - rlwrap
   - ntp
   # - expect
   - git
@@ -43,9 +41,6 @@ common_packages_el6:
   - zsh
 common_packages_el7:
   - screen
-  - procps
-  - module-init-tools
-  - ethtool
   - bc
   - nc
   - bind-utils
@@ -54,10 +49,6 @@ common_packages_el7:
   - sysstat
   - unzip
   - openssh-clients
-  - compat-libcap1
-  - collectl
-  - rlwrap
-  - expect
   - git
   - lvm2
   - xfsprogs

@@ -1,7 +1,7 @@
 # only common items
 ---
-- name: Include SSH Key Sync to Known Hosts
-  include_tasks: append-to-known-hosts.yaml
+#- name: Include SSH Key Sync to Known Hosts
+#  include_tasks: append-to-known-hosts.yaml
 
 - name: Install common packages OL/RHEL
   yum: name={{ common_packages }} state=installed
