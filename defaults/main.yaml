@@ -2,17 +2,8 @@
 ssh_known_hosts_command: "ssh-keyscan -T 10"
 ssh_known_hosts_file: "{{ lookup('env','HOME') + '/.ssh/known_hosts' }}"
 ssh_known_hosts: "{{ groups['all'] }}"
-epel_rpm: "{% if ansible_distribution_major_version|int==6%}{{ epel6_rpm }}{%elif ansible_distribution_major_version|int==7 %}{{ epel7_rpm }}{% else %}None{% endif %}"
-epel7_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-epel6_rpm: https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-ol_repo_file: "{% if ansible_distribution_major_version|int==6%}{{ ol6_repo_file }}{%elif ansible_distribution_major_version|int==7 %}{{ ol7_repo_file }}{% else %}None{% endif %}"
-ol6_repo_file: public-yum-ol6.repo
-ol7_repo_file: public-yum-ol7.repo
-repo_dir: /etc/yum.repos.d/
 #  default_user: ansible
 install_os_packages: true
-configure_epel_repo: false
-configure_public_yum_repo: false
 configure_motd: false
 configure_ntp: true
 
@@ -73,6 +64,10 @@ common_packages_el7:
   - btrfs-progs
   - python-devel
   - python-pip
+  - rh-python35
+  - rh-python35-python-devel
+  - rh-python35-python-pip
+  - rh-python35-python-tools
   - libselinux-python
   - autofs
   - parted
@@ -80,3 +75,9 @@ common_packages_el7:
   - procps
   - psmisc
   - zsh
+
+# users
+active_admins: None
+#- { name: "Master Admin Account", username: "svc-devops" }
+active_developers: None
+deactivated_accounts: None
