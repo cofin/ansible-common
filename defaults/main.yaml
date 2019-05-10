@@ -28,8 +28,6 @@ common_packages_el6:
   - lvm2
   - xfsprogs
   - btrfs-progs
-  - python-devel
-  - python-pip
   - libselinux-python
   - autofs
   - parted
