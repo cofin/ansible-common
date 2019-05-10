@@ -20,9 +20,6 @@ configure_ntp: true
 common_packages: "{% if ansible_distribution_major_version|int==6%}{{ common_packages_el6 }}{%elif ansible_distribution_major_version|int==7 %}{{ common_packages_el7 }}{% else %}None{% endif %}"
 common_packages_el6:
   - screen
-  - facter
-  - procps
-  - module-init-tools
   - ethtool
   - bc
   - nc
@@ -34,9 +31,9 @@ common_packages_el6:
   - openssh-clients
   - compat-libcap1
   - collectl
-  - rlwrap
+  # - rlwrap
   - ntp
-  - expect
+  # - expect
   - git
   - lvm2
   - xfsprogs
@@ -49,7 +46,6 @@ common_packages_el6:
   - autofs
   - parted
   - mlocate
-  - ntp
   - ksh
   - procps
   - psmisc
