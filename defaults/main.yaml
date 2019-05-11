@@ -1,8 +1,4 @@
 ---
-ssh_known_hosts_command: "ssh-keyscan -T 10"
-ssh_known_hosts_file: "{{ lookup('env','HOME') + '/.ssh/known_hosts' }}"
-ssh_known_hosts: "{{ groups['all'] }}"
-#  default_user: ansible
 install_os_packages: true
 configure_motd: false
 configure_ntp: true
@@ -63,7 +59,5 @@ common_packages_el7:
   - zsh
 
 # users
-active_admins: None
+users: None
 #- { name: "Master Admin Account", username: "svc-devops" }
-active_developers: None
-deactivated_accounts: None
