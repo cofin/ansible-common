@@ -2,6 +2,7 @@
 install_os_packages: true
 configure_motd: false
 configure_ntp: true
+configure_ca_trust: false
 
 # checking for systemd by looking for OEL7.
 # TO DO: Re-write this to change for package?
@@ -65,3 +66,6 @@ common_packages_el7:
 # users
 users: None
 #- { name: "Master Admin Account", username: "svc-devops" }
+
+# certificate
+cert_file: None

@@ -9,6 +9,10 @@
   import_tasks: ntp.yaml
   when: configure_ntp
 
+- name: Launching tasks update CA Trust.
+  import_tasks: ca-trust.yaml
+  when: configure_ca_trust
+
 # - name: Add motd
 #   template: src=motd.j2 dest=/etc/motd
 #   tags: motd

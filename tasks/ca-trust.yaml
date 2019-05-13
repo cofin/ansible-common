@@ -1,2 +1,14 @@
 ---
-cert_file: None
+- name: Installing ca-certificates package
+  yum: name=ca-certificates state=installed
+- name: Publishing certificate trust
+  copy:
+    src: "{{ cert_file }}"
+    dest: /etc/pki/ca-trust/source/anchors/custom.cer
+    owner: root
+    group: root
+    mode: 0644
+- name: Run update-ca-trust extract
+  shell: update-ca-trust extract
+  become: yes
+  become_user: root
