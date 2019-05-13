@@ -1,0 +1,8 @@
+---
+- name: Install NTP Package
+  yum: name=ntp state=installed
+- name: Enable NTP Daemon
+  service: |
+    name=ntpd
+    state=started
+    enabled=yes

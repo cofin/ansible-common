@@ -1,19 +1,13 @@
 # only common items
 ---
 
-- name: Install common packages OL/RHEL
-  yum: name={{ common_packages }} state=installed
-  when: install_os_packages and ansible_os_family == 'RedHat'
-  tags:
-    - common-packages
+- name: Launching tasks to install standard system packages.
+  import_tasks: common-packages.yaml
+  when: install_os_packages
 
-- name: Start and enable NTP
-  service: |
-    name=ntpd
-    state=started
-    enabled=yes
+- name: Launching tasks to enable NTP.
+  import_tasks: ntp.yaml
   when: configure_ntp
-  tags: ntp
 
 # - name: Add motd
 #   template: src=motd.j2 dest=/etc/motd
